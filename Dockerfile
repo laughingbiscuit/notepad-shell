@@ -7,5 +7,5 @@ FROM alpine:3
 
 RUN apk add --update busybox-extras curl git docker
 COPY gen /gen
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/gen"]
 
