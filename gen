@@ -21,7 +21,7 @@ done)
 SIMPLE_SHELL="$(cat target/SimpleShell.sh.out)" \
 SIMPLE_API="$(cat target/SimpleAPI.sh.out)" \
 REF="$(cat target/Reference.sh.out)" \
-  envsubst < Notepad.md > index.md
+  envsubst < Notepad.md > target/index.md
 
 # generate html report
-pandoc index.md -o index.html -H header.html -f gfm -f markdown-implicit_figures
+pandoc target/index.md -o target/index.html -H header.html -f gfm -f markdown-implicit_figures
