@@ -1,0 +1,5 @@
+#!/bin/sh
+set -xe
+
+grep -q "Custom-Header" SimpleAPI.sh.out
+

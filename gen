@@ -1,0 +1,27 @@
+#!/bin/sh
+set -xe
+
+# setup a scratch directory
+rm -rf target
+mkdir target/
+
+# run shell scripts
+cp src/*.sh target/
+(cd target && for FILE in *.sh; do 
+  sh "$FILE" > "$FILE.out" 2>&1
+done)
+
+# assert outputs of shell scripts
+cp src/*.test target/
+(cd target && for FILE in *.test; do 
+  sh "$FILE" > "$FILE.out" 2>&1
+done)
+
+# generate markdown report, including shell outputs if needed
+SIMPLE_SHELL="$(cat target/SimpleShell.sh.out)" \
+SIMPLE_API="$(cat target/SimpleAPI.sh.out)" \
+REF="$(cat target/Reference.sh.out)" \
+  envsubst < Notepad.md > index.md
+
+# generate html report
+pandoc index.md -o index.html -H header.html -f gfm -f markdown-implicit_figures
