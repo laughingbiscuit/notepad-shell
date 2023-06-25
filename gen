@@ -18,10 +18,12 @@ cp src/*.test target/
 done)
 
 # generate markdown report, including shell outputs if needed
-SIMPLE_SHELL="$(cat target/SimpleShell.sh.out)" \
-SIMPLE_API="$(cat target/SimpleAPI.sh.out)" \
-REF="$(cat target/Reference.sh.out)" \
-  envsubst < Notepad.md > target/index.md
+cp static/* target/
+cd target
+SIMPLE_SHELL="$(cat SimpleShell.sh.out)" \
+SIMPLE_API="$(cat SimpleAPI.sh.out)" \
+REF="$(cat Reference.sh.out)" \
+  envsubst < ../Notepad.md > index.md
 
 # generate html report
-pandoc target/index.md -o target/index.html -H header.html -f gfm -f markdown-implicit_figures
+pandoc index.md -o index.html -H static/header.html -f gfm -f markdown-implicit_figures
