@@ -27,4 +27,4 @@ REF="$(cat Reference.sh.out)" \
   envsubst < ../Notepad.md > index.md
 
 # generate html report
-pandoc index.md -o index.html -H header.html -f gfm -f markdown-implicit_figures
+pandoc index.md --toc -o index.html -H header.html -f gfm -f markdown-implicit_figures
