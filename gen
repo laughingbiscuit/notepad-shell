@@ -1,9 +1,6 @@
 #!/bin/sh
 set -xe
 
-echo "can we access secret?"
-echo "$SOME_SECRET" | wc -c
-
 # setup a scratch directory
 rm -rf target
 mkdir target/
