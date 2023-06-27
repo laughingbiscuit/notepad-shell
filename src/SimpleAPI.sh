@@ -2,6 +2,7 @@
 set -xe
 
 docker run -d -p 80:80 kennethreitz/httpbin
-while ! curl -sf localhost/get; do sleep 2; done
+
+sleep 5
 
 curl -isSf -H "Custom-Header: True" http://localhost/get
