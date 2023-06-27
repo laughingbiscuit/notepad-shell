@@ -2,5 +2,5 @@
 
 set -xe
 
-RESULT=$(sh SimpleAPI.sh)
+RESULT=$(sh SimpleShell.sh)
 docker ps
