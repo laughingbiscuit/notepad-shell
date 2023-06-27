@@ -1,4 +1,4 @@
-# Notepad
+# Sample Usage
 
 ## Simple Shell
 
