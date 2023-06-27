@@ -21,5 +21,6 @@ $REF
 
 ```sh
 $USE_SECRET
+$SOME_SECRET
 ```
 
