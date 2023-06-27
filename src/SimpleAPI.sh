@@ -1,5 +1,7 @@
 #!/bin/sh
 set -xe
 
-# commented out to reduce calls to external dependency
-# curl -isSf -H "Custom-Header: True" https://httpbin.org/get
+docker run -d -p 80:80 kennethreitz/httpbin
+while ! curl -sf localhost/get; do sleep 2; done
+
+curl -isSf -H "Custom-Header: True" http://localhost/get
