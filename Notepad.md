@@ -1,3 +1,7 @@
+A bunch of my learnings in one place. Each code
+block is run in a pipeline, so you can be sure that 
+it works.
+
 # Sample Usage
 
 ## Simple Shell
