@@ -16,3 +16,9 @@ $SIMPLE_API
 ```sh
 $REF
 ```
+
+## Secret
+
+```sh
+$USE_SECRET
+```

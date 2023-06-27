@@ -22,6 +22,7 @@ cp static/* target/
 cd target
 SIMPLE_SHELL="$(cat SimpleShell.sh.out)" \
 SIMPLE_API="$(cat SimpleAPI.sh.out)" \
+USE_SECRET="$(cat UseSecret.sh.out)" \
 REF="$(cat Reference.sh.out)" \
   envsubst < ../Notepad.md > index.md
 
