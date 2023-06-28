@@ -6,4 +6,4 @@ docker run -id --name some-nginx --net=host nginx
 
 sleep 5
 
-curl -H http://localhost
+curl -v http://localhost
