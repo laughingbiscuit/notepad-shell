@@ -1,9 +1,6 @@
 #!/bin/sh
 set -xe
 
-docker rm -f httpbin
-docker run -id --name some-nginx -p=80:80 nginx
-docker network ls
 
 cat <<EOF | kind create cluster --config=-
 kind: Cluster
