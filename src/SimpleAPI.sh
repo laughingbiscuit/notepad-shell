@@ -2,7 +2,7 @@
 set -xe
 
 docker rm -f httpbin
-docker run --name some-nginx --net=host nginx
+docker run -id --name some-nginx --net=host nginx
 
 sleep 5
 
