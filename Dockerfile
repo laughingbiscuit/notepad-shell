@@ -6,7 +6,8 @@ FROM alpine:3
 #ADD test.sh .
 
 RUN apk add --update busybox-extras curl git docker gettext pandoc
-RUN apk add kubectl kind --repository=https://dl-cdn.alpinelinux.org/alpine/edge/
+RUN apk add kind --repository=https://dl-cdn.alpinelinux.org/alpine/edge/
+RUN apk add kubectl --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
 COPY gen /gen
 ENTRYPOINT ["/gen"]
 
