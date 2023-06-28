@@ -2,7 +2,8 @@
 set -xe
 
 docker rm -f httpbin
-docker run -id --name some-nginx --net=host nginx
+docker run -id --name some-nginx -p=80:80 nginx
+docker network ls
 
 sleep 5
 
